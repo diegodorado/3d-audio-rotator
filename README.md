@@ -1,10 +1,33 @@
 # 3D Audio Rotator
 
 A chuck script to rotate binaural audio files through ambisonics equations.
-
 The aim is to generate several outputs with ambisonics rotations applied out of a single binaural input.
 
 Note: This firts version performs rotations around the Z-axis only.
+
+## Getting Started
+
+1) First, install [chuck](http://chuck.cs.princeton.edu/release/).  
+2) Then clone this repository:
+
+`$ git clone https://github.com/diegodorado/3d-audio-rotator.git`
+
+3) Run it with
+
+`$ chuck -s process.ck:input_path:output_path:rotation_frequency:rotation_phase`
+
+For example:
+
+`$ chuck -s process.ck:foo.wav:bar.wav:0.5:45`
+
+will take foo.wav file, and outputs a bar.wav file, with the same length, but rotating at 0.5 hertz on the Z-axis and begining with 45 degrees.
+
+Should you want a static rotation, just set frequency to `0` like so:
+
+`$ chuck -s process.ck:foo.wav:bar.wav:0:45`
+
+
+
 
 ## Encoding Equations
 ( taken from: https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm)
