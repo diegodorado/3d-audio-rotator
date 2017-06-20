@@ -1,7 +1,7 @@
 if(me.args() < 4){
   cherr <= "Wrong number of arguments\n";
   cherr <= "Try with:\n";
-  cherr <= "chuck process.ck:input:output:freq:phase\n";
+  cherr <= "chuck -s process.ck:input:output:freq:phase\n";
   me.exit();
 }
 

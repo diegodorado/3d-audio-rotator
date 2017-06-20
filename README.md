@@ -3,7 +3,7 @@
 A chuck script to rotate binaural audio files through ambisonics equations.
 The aim is to generate several outputs with ambisonics rotations applied out of a single binaural input.
 
-Note: This firts version performs rotations around the Z-axis only.
+Note: This first version performs rotations around the Z-axis only.
 
 ## Getting Started
 
@@ -16,6 +16,9 @@ Note: This firts version performs rotations around the Z-axis only.
 
 `$ chuck -s process.ck:input_path:output_path:rotation_frequency:rotation_phase`
 
+Be aware that `input_path` is expected to be a stereo file.  
+Note that we pass `-s` to render offline and avoid the need of initializing `jackd` or other audio backend. The script ins't outputting audio to the `dac` anyway.
+
 For example:
 
 `$ chuck -s process.ck:foo.wav:bar.wav:0.5:45`
@@ -26,7 +29,12 @@ Should you want a static rotation, just set frequency to `0` like so:
 
 `$ chuck -s process.ck:foo.wav:bar.wav:0:45`
 
+There is also a python script to run bulk proccesses.  
+Usage:
 
+`$ python input_path output_path rotation_frequency rotation_phase`
+
+But in this case `input_path` and `output_path` are folders.
 
 
 ## Encoding Equations
