@@ -25,8 +25,8 @@ i => blackhole;
 s  => w => blackhole;
 
 // left and right input chanel angles
-Math.PI/2.0 => float lA;
--Math.PI/2.0 => float rA;
+Math.PI/4.0 => float lA;
+-Math.PI/4.0 => float rA;
 [ 0.707       , 0.707        ] @=> float wCoeff[];
 [ Math.cos(lA), Math.cos(rA) ] @=> float xCoeff[];
 [ Math.sin(lA), Math.sin(rA) ] @=> float yCoeff[];
